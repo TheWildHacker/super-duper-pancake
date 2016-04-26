@@ -1,49 +1,51 @@
 #include <stdio.h>
 
-int main()
+float a, b, c;
+char naamLeerling[20];
+char naamLeraar[20];
+char naamVak[20];
+
+void askStrings()
 {
-
-    float a, b, c;
-
-    char name[20];
-    char nameTeacher[20];
-    char vak[20];
-
-    printf("Voer de naam van de leerling in.\n");
+    printf("Wat is de naam van de leerling?\n");
     printf(">> ");
-    scanf("%19s", &name);
-
-    printf("================================== \n");
-
-    printf("Voer uw eigen naam in.\n");
+    scanf("%19s", naamLeerling);
+    
+    printf("Wat is uw naam?\n");
     printf(">> ");
-    scanf("%19s", &nameTeacher);
+    scanf("%19s", naamLeraar);
 
-    printf("================================== \n");
-
-    printf("Voer het vak voor het rapportcijfer in.\n");
+    printf("Wat is het vak wat u wilt berekenen.\n");
     printf(">> ");
-    scanf("%19s", &vak);
+    scanf("%19s", naamVak);
+}
 
-    printf("================================== \n");
-
-    printf("Voer het 1e cijfer in.\n");
+void askNumber()
+{
+    printf("Geef het 1e cijfer.\n");
     printf(">> ");
     scanf("%f", &a);
-
-    printf("================================== \n");
-
-    printf("Voer het 2e cijfer in.\n");
+    
+    printf("Geef het 2e cijfer.\n");
     printf(">> ");
     scanf("%f", &b);
+} 
 
-    printf("================================== \n");
+int main()
+{
+    
+    askStrings();
+    askNumber();
+    
     c = (a + b) / 2;
-    printf("================================== \n");
-
-    printf("    +-+( Rapport Van %s )+-+ \n", name);
-    printf("    +-+( Docent: %s )+-+ \n", nameTeacher);
-    printf("    +-+( Vak: %s Cijfer: %f )+-+ \n", vak, c);
-
+    
+    printf("====+-RAPPORT-+==== \n");
+    printf("Naam leerling: %s \n", naamLeerling);
+    printf("Naam leraar: %s \n", naamLeraar);
+    printf("Vak: %s \n", naamVak);
+    printf("Cijfer: %f \n", c);
+    printf("====+-RAPPORT-+====");
+    
     return 0;
+    
 }
